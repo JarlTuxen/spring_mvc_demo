@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Oversigt over dyr i Zoo</title>
 </head>
 <body>
-<h1>Oversigt over dyrene</h1>
+    <h1>Oversigt over dyrene</h1>
 
-<table>
+    <table>
 
-    <tr>
-        <th>ID</th>
-        <th>Navn</th>
-        <th>Art</th>
-    </tr>
-    <tr th:each="animal : ${anim}">
-        <td th:text="${animal.id}">xxx</td>
-        <td th:text="${animal.name}">Motorstruds</td>
-        <td th:text="${animal.species}">Motoriseret fugl</td>
-        <td><a th:href="@{'/update/' + ${animal.id}}">Opdater</a></td>
-        <td><a th:href="@{'/delete/' + ${animal.id}}">Slet</a></td>
-    </tr>
-</table>
+        <tr>
+            <th>ID</th>
+            <th>Navn</th>
+            <th>Art</th>
+        </tr>
+        <tr th:each="animal : ${anim}">
+            <!-- Thymeleaf bruger automatisk getters -->
+            <td th:text="${animal.id}">xxx</td>
+            <td th:text="${animal.name}">Motorstruds</td>
+            <td th:text="${animal.species}">Motoriseret fugl</td>
+            <td><a th:href="@{'/update/' + ${animal.id}}">Opdater</a></td>
+            <td><a th:href="@{'/delete/' + ${animal.id}}">Slet</a></td>
+        </tr>
+    </table>
 
-<a href="create">Tilføj nyt dyr</a>
+    <a href="create">Tilføj nyt dyr</a>
 </body>
 </html>

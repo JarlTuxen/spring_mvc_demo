@@ -23,12 +23,14 @@ public class AnimalRepository implements ICrudRepository<Animal>{
 
     @Override
     public List<Animal> readAll(){
+
         return animals;
     }
 
     @Override
     //add new animal to collection
     public void create(Animal animal){
+
         animals.add(animal);
     }
 
