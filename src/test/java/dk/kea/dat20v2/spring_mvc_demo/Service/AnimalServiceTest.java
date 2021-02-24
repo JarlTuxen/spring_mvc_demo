@@ -20,7 +20,7 @@ class AnimalServiceTest {
     @BeforeEach
     void SetUp(){
         //Arrange
-        //animalService = new AnimalService();
+        //lav rutine, der reinitialiserer databasen
     }
 
     @Test
