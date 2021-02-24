@@ -32,6 +32,7 @@ class AnimalServiceTest {
         long antal = animalList.size();
 
         //Assert
+        //db initialiseret med 4 dyr, så der skal returneres 4
         assertEquals(antal, 4);
     }
 
