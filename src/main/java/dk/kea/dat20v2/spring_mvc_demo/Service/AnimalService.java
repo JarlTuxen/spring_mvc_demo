@@ -14,6 +14,15 @@ public class AnimalService {
     @Autowired
     AnimalRepository animalRepository;
 
+    /* constructor injection
+    private final AnimalRepository animalRepository;
+
+    Public AnimalService(AnimalRepository animalRepository){
+        this.animalRepository = animalRepository;
+    }
+    */
+
+
     public List<Animal> readAll(){
         List<Animal> animals = new ArrayList<>();
         for (Animal animal:animalRepository.readAll()){

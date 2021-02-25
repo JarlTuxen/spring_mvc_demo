@@ -1,6 +1,7 @@
 package dk.kea.dat20v2.spring_mvc_demo.Service;
 
 import dk.kea.dat20v2.spring_mvc_demo.Model.Animal;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,22 @@ import static org.junit.jupiter.api.Assertions.*;
 //fortæl Spring at der skal laves dependency injection
 @SpringBootTest
 class AnimalServiceTest {
+
+    /* constructor injection
+    AnimalRepository animalRepository = new AnimalRepository();
+    AnimalService animalService = new Animalservice(animalRepository);
+    */
+
     @Autowired
     AnimalService animalService;
 
+    @BeforeAll
+    public static void initialize(){
+        //rutine der køres en gang før alle tests
+    }
+
     @BeforeEach
-    void SetUp(){
+    void setUp(){
         //Arrange
         //lav rutine, der reinitialiserer databasen
     }
@@ -34,7 +46,7 @@ class AnimalServiceTest {
 
         //Assert
         //db initialiseret med 4 dyr, så der skal returneres 4
-        assertEquals(antal, 4);
+        assertEquals(4, antal);
     }
 
     @Test
