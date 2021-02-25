@@ -1,9 +1,7 @@
 package dk.kea.dat20v2.spring_mvc_demo.Service;
 
 import dk.kea.dat20v2.spring_mvc_demo.Model.Animal;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -25,15 +23,26 @@ class AnimalServiceTest {
     @Autowired
     AnimalService animalService;
 
+    //arrange
+
     @BeforeAll
     public static void initialize(){
-        //rutine der køres en gang før alle tests
+        //rutine der køres en gang før alle tests - f.eks. opret db connection
     }
 
     @BeforeEach
     void setUp(){
-        //Arrange
-        //lav rutine, der reinitialiserer databasen
+        //rutine der køres før hver test
+    }
+
+    @AfterEach
+    void tearDown(){
+        //cleanup efter hver test
+    }
+
+    @AfterAll
+    public static void closeDown(){
+        //ryd op efter alle tests er kørt - f.eks. luk db connection
     }
 
     @Test
