@@ -11,9 +11,6 @@ import java.util.List;
 @Service
 public class AnimalService {
 
-    @Autowired
-    AnimalRepository animalRepository;
-
     /* constructor injection
     AnimalRepository animalRepository;
 
@@ -21,6 +18,11 @@ public class AnimalService {
         this.animalRepository = animalRepository;
     }
     */
+
+    //field injection
+    @Autowired
+    AnimalRepository animalRepository;
+
 
 
     public List<Animal> readAll(){
