@@ -13,11 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class HomeController {
     /* contstructor injection (mulighed a)
-    private final AnimalService animalService;
-
-    public HomeController(AnimalService animalService){
-        this.animalService = animalService;
-    }
+    AnimalService animalService = new AnimalService(new AnimalRepository());
     */
 
     // "field" injection (mulighed b)

@@ -15,7 +15,7 @@ public class AnimalService {
     AnimalRepository animalRepository;
 
     /* constructor injection
-    private final AnimalRepository animalRepository;
+    AnimalRepository animalRepository;
 
     Public AnimalService(AnimalRepository animalRepository){
         this.animalRepository = animalRepository;
