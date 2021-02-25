@@ -12,6 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+//fortæl Spring at der skal laves dependency injection
 @SpringBootTest
 class AnimalServiceTest {
     @Autowired
